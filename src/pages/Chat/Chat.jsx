@@ -46,7 +46,7 @@ const Chat = () => {
     }
   };
   return (
-    <div className="flex flex-col h-screen   items-center overflow-auto overflow-x-hidden">
+    <div className="flex flex-col h-screen items-center overflow-auto overflow-x-hidden">
       <Header />
 
       {messages.length === 0 ? (
