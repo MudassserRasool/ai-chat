@@ -22,9 +22,10 @@ const Chat = () => {
   };
 
   return (
-    <div className="flex flex-col h-screen w-[50%] mx-auto items-center">
+    <div className="flex flex-col h-screen   items-center overflow-hidden">
+      {/* flex flex-col h-screen bg-gray-100 */}
       {/* Chat Area */}
-      <div className="flex-1 overflow-y-auto p-4 space-y-4">
+      <div className="flex-1 w-full max-w-3xl overflow-y-auto p-4 space-y-8">
         {messages.map((msg) => (
           <div
             key={msg.id}
@@ -37,7 +38,7 @@ const Chat = () => {
                 msg.sender === 'user'
                   ? 'bg-blue-500 text-white'
                   : 'bg-gray-200 text-black'
-              } px-4 py-2 rounded-lg max-w-xs shadow`}
+              } px-4 py-2 rounded-lg max-w-md shadow break-words`}
             >
               {msg.text}
             </div>
@@ -46,16 +47,16 @@ const Chat = () => {
       </div>
 
       {/* Input Area */}
-      <div className="bg-[#2F2F2F] shadow  flex   fixed bottom-2 ">
+      <div className="bg-[#2F2F2F] shadow flex fixed bottom-2 rounded-xl w-[800px] p-3 gap-5">
         <input
           type="text"
-          className="flex-1 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring focus:ring-blue-500"
-          placeholder="Type your message..."
+          className="flex-1 bg-[#2F2F2F] text-white p-32  focus:outline-none focus:ring-0 border-none focus:border-none rounded-lg px-4 py-2 "
+          placeholder=" Message your bussiness agent..."
           value={input}
           onChange={(e) => setInput(e.target.value)}
         />
         <button
-          className="bg-blue-500 text-white px-6 py-2 ml-2 rounded-lg shadow hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-500"
+          className="bg-white text-black px-6 w-20 h-10 py-2 ml-auto rounded-lg shadow hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-500"
           onClick={handleSendMessage}
         >
           Send
