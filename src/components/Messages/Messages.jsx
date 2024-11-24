@@ -30,7 +30,7 @@ const Messages = ({ messages, isLoading }) => {
               msg.sender === 'user'
                 ? 'bg-[#303030] text-white rounded-lg shadow'
                 : ' text-white'
-            } px-4 py-3 max-w-xl break-words`}
+            } px-4 py-2 max-w-xl break-words`}
           >
             {msg.text}
           </div>

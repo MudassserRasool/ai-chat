@@ -31,7 +31,6 @@ const Chat = () => {
         text: data.choices[0].message.content,
       };
       setMessages([...messages, userMessage, assistantMessage]);
-      setInput('');
     } catch (error) {
       toast.error('An error occurred. Please try again later.', error);
     } finally {

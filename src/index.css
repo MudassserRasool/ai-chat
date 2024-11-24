@@ -16,3 +16,23 @@
     transform: translateY(0);
   }
 }
+
+/* For Webkit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 12px; /* Adjust the width if needed */
+}
+
+::-webkit-scrollbar-track {
+  background: #303030; /* Optional: background of the track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #000; /* Black color for the scrollbar thumb */
+  border-radius: 10px; /* Optional: rounded corners */
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #000 #303030; /* Black thumb, light gray track */
+}
