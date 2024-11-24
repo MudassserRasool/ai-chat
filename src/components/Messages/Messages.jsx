@@ -30,11 +30,9 @@ const Messages = ({ messages, isLoading }) => {
               msg.sender === 'user'
                 ? 'bg-[#303030] text-white rounded-lg shadow'
                 : ' text-white'
-            } px-4 py-3 max-w-md break-words`}
+            } px-4 py-3 max-w-xl break-words`}
           >
-            {isLoading && msg.sender !== 'user' && index === messages.length - 1
-              ? '...'
-              : msg.text}
+            {msg.text}
           </div>
         </motion.div>
       ))}
