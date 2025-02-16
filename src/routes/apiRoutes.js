@@ -1,5 +1,5 @@
 const apiRoutes = {
-  CHAT_GPT: 'https://api.openai.com/v1/chat/completions',
+  CHAT_GPT: 'https://api.aimlapi.com/v1',
 };
 
 export default apiRoutes;

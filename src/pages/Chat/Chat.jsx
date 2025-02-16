@@ -24,11 +24,21 @@ const Chat = () => {
     setInput('');
 
     try {
-      const data = await sendMessageToAssistant(messages, userMessage);
+      // const data = await sendMessageToAssistant(messages, userMessage);
+      const educationalPrompt = {
+        sender: 'system',
+        text: 'You are an advanced AI tutor strictly specialized in education. Your role is to generate high-quality quizzes, in-depth explanations, and structured learning materials with professionalism. You do not entertain any non-educational queries.',
+      };
+
+      const data = await sendMessageToAssistant(
+        [educationalPrompt, ...messages],
+        userMessage
+      );
+      console.log('data', data);
       const assistantMessage = {
         id: messages.length + 2,
         sender: 'assistant',
-        text: data.choices[0].message.content,
+        text: data,
       };
       setMessages([...messages, userMessage, assistantMessage]);
     } catch (error) {
