@@ -12,7 +12,7 @@ const ChatInput = ({
       <textarea
         type="text"
         className="flex-1 bg-[#2F2F2F] text-white p-32  focus:outline-none resize-none focus:ring-0 border-none focus:border-none rounded-lg px-4 py-2 mx-h-32"
-        placeholder=" Message your bussiness agent..."
+        placeholder=" Message your educational agent..."
         value={input}
         onChange={(e) => setInput(e.target.value)}
         onKeyDown={handleKeyDown}
