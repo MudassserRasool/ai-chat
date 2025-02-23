@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 
 const ChatInput = ({
@@ -31,6 +32,13 @@ const ChatInput = ({
       </button>
     </div>
   );
+};
+ChatInput.propTypes = {
+  input: PropTypes.string.isRequired,
+  setInput: PropTypes.func.isRequired,
+  handleSendMessage: PropTypes.func.isRequired,
+  isLoading: PropTypes.bool,
+  handleKeyDown: PropTypes.func,
 };
 
 export default ChatInput;

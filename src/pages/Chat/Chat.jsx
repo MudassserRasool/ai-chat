@@ -27,7 +27,7 @@ const Chat = () => {
       // const data = await sendMessageToAssistant(messages, userMessage);
       const educationalPrompt = {
         sender: 'system',
-        text: 'You are an advanced AI tutor strictly specialized in education. Your role is to generate high-quality quizzes, in-depth explanations, and structured learning materials with professionalism. You do not entertain any non-educational queries.',
+        text: 'Discuss related to businesses',
       };
 
       const data = await sendMessageToAssistant(
