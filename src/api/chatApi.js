@@ -33,7 +33,7 @@ const sendMessageToAssistant = async (messages, userMessage) => {
   console.log('----------------------messages------------------------');
   try {
     const response = await fetch(
-      `https://f72a-182-181-134-203.ngrok-free.app/api/generate`,
+      `https://39a4-139-135-42-200.ngrok-free.app/api/generate`,
       {
         method: 'POST',
         headers: {
