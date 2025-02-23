@@ -26,37 +26,41 @@
 
 // export { sendMessageToAssistant };
 
-import { OPEN_AI_API_KEY } from '../constants';
-
-const BASE_URL = 'https://api.aimlapi.com/v1';
+const BASE_URL = 'https://f72a-182-181-134-203.ngrok-free.app';
 
 const sendMessageToAssistant = async (messages, userMessage) => {
+  console.log(userMessage);
+  console.log('----------------------messages------------------------');
   try {
-    const response = await fetch(`${BASE_URL}/chat/completions`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${OPEN_AI_API_KEY}`,
-      },
-      body: JSON.stringify({
-        model: 'deepseek-ai/deepseek-llm-67b-chat',
-        messages: [...messages, userMessage].map((message) => ({
-          role: message.sender,
-          content: message.text,
-        })),
-        max_tokens: 3000,
-        temperature: 0.7,
-      }),
-    });
+    const response = await fetch(
+      `https://f72a-182-181-134-203.ngrok-free.app/api/generate`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          // Authorization: `Bearer ${OPEN_AI_API_KEY}`,
+        },
 
-    const data = await response.json();
+        body: JSON.stringify({
+          model: 'granite3-dense:2b',
+          prompt: userMessage.text,
+          stream: false,
+        }),
+      }
+    );
+
+    console.log('----------------------response------------------------');
+    console.log(response);
+    console.log('----------------------response------------------------');
+
+    const data = await response?.json();
     console.log(response, ' response');
 
     if (!response.ok) {
       throw new Error(data.error?.message || 'Error fetching response');
     }
 
-    return data.choices[0]?.message?.content || 'No response from AI.';
+    return data.response || 'No response from AI.';
   } catch (error) {
     console.error('Error:', error);
     throw new Error('Failed to communicate with AI.');
